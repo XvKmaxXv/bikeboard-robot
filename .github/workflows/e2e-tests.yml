@@ -1,6 +1,5 @@
 name: Playwright Tests
 on:
-  push:
   workflow_dispatch:
   
 jobs:
@@ -8,16 +7,16 @@ jobs:
     timeout-minutes: 60
     runs-on: ubuntu-latest
     steps:
-    - name: CHeckout Code
+    - name: Checkout Code
       uses: actions/checkout@v6
 
     - name: Set up Node
-      uses: action/setup-node@v4
+      uses: actions/setup-node@v4
       with:
         node-version: 22
         cache: 'npm'
     
-    - name: install Web App dependencies
+    - name: install WebApp dependencies
       run: npm install
 
     - name: Set up Python
